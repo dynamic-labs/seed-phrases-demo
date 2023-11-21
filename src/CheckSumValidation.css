@@ -1,0 +1,74 @@
+/* Button Styling */
+.validate-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.validate-button:hover {
+  background-color: #45a049;
+}
+
+/* Results Container */
+.checksum-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  animation: fadeIn 0.5s ease-out;
+  max-width: 100%;
+}
+
+.validation-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.validation-step-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Result Step */
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #eaeaea;
+  border-radius: 3px;
+  animation: slideIn 0.5s ease-out;
+  word-break: break-all;
+  min-width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif; /* Switch to a more modern font like Inter */
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #fafafa; /* A lighter, more modern background color */
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* Container for the entire app */
+#root {
+  max-width: 1024px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px; /* More pronounced border radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Softer shadow */
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600; /* More emphasis on headings */
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #333;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 1.5rem 0;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.generator-container,
+.setup,
+.entropy-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Consistent gap for a cleaner layout */
+  align-items: center;
+}
+
+.result-container {
+  max-width: 100%;
+}
+
+/* Styling for the dropdown and label */
+.dropdown-container {
+  margin: 20px auto;
+  padding: 10px;
+  background: #fff;
+}
+
+.dropdown-container select {
+  font-size: 1rem;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* Button styling */
+button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Text and font styling */
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Entropy Visualization */
+.entropy-bits,
+.entropy-length,
+.entropy-hex,
+.entropy-hash,
+.entropy-decimal {
+  white-space: pre-wrap; /* Maintains spacing and formatting */
+  word-break: break-all;
+  font-family: "Courier New", monospace;
+  background-color: #eaeaea;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 10px 0;
+  overflow-x: auto; /* Adds horizontal scroll */
+  min-width: 100%;
+  text-align: center;
+}
+
+/* Section for full phrase display */
+.phrase {
+  background-color: #eaeaea;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Bits to word mapping section */
+.mapping {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.bits {
+  word-break: break-word;
+}
+
+.seed-phrase-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  background-color: #eaeaea;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.word-bit-pair {
+  background: #ddd;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .seed-phrase-container,
+  .dropdown-container,
+  button,
+  .phrase {
+    flex-direction: column;
+  }
+
+  .word-bit-pair {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.total-bits-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.new-phrase {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.checksum-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.bits-visualization {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  word-break: break-all;
+}
+
+.entropy-bits,
+.phrase,
+.seed-phrase-container {
+  background-color: #f5f5f5; /* Slightly different shade for better contrast */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.dropdown-container select {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0; /* Softer border color */
+  cursor: pointer;
+  background-color: #ffffff; /* Consistent background */
+}
+
+button {
+  background-color: #0070f3; /* Vercel-like blue */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Divider Style */
+.divider {
+  border-top: 1px solid black; /* Light grey border for a subtle divider */
+  margin: 2rem 0; /* Spacing above and below the divider */
+  min-height: 1rem;
+  min-width: 100%;
+}
+
+/* Optional: Add a text label in the divider, centered */
+.divider-with-text {
+  text-align: center;
+  line-height: 0.1em;
+  margin: 2rem 0;
+}
+
+.divider-with-text span {
+  background: #fafafa; /* Background color matching the body */
+  padding: 0 10px;
+  font-size: 0.9rem;
+  color: #666; /* Slightly darker text color for contrast */
+}
