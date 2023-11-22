@@ -1,5 +1,5 @@
 {
-  "name": "seed-phrases",
+  "name": "@dynamic-labs/seed-phrases",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
